@@ -12,14 +12,16 @@ from masterlists import masterlist_json_creator
 def main():
     bays = ["E", "C", "W"]
 
-
+    #runs system for each East, Center, and West bays of LEO
     for bay in bays:
         masterlist_json_creator.main(bay)
         data_5tm.main_data(bay)
         data_mps2.main_data(bay)
         sensor_state_detector.main(bay)
-    
+
+    #reports sensor health states via email
     email_reporter.main()
+
 
 
 main()
